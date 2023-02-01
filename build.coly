@@ -1,0 +1,11 @@
+/* The contributors of this project al use Windows, so this build script will only be able to run on Windows
+   (I'm lazy)
+*/
+
+// Imports
+use "cmd"
+
+// Build script
+"Building..." puts
+// "echo <Command here>" wincmd
+"Finished building" puts
