@@ -1,0 +1,11 @@
+navbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "logo nav nav";
+    background-color: #f1f1f1;
+    padding: 0 2rem;
+    align-items: center;
+    justify-items: center;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
