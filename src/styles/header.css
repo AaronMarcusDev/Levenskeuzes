@@ -3,7 +3,7 @@ navbar {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: "logo nav nav";
-    background-color: #f1f1f1;
+    background-color: rgb(65, 62, 62);
     padding: 0 2rem;
     align-items: center;
     justify-items: center;

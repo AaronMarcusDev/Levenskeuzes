@@ -6,4 +6,13 @@
 }
 html{
     font-family: 'kopscript', 'Kopscript-Regular';
+    background-color: rgb(65, 62, 62);
+    color: aliceblue;
 }
+button{
+    font-family: 'kopscript', 'Kopscript-Regular';
+    background-color: rgb(65, 62, 62);
+    color: aliceblue;
+}
+
+
