@@ -13,7 +13,6 @@ window.onload = () => {
     makeNewParent("div", "container");
     makePara("container", `Counter: ${counter}`);
     replacePara("level", `Level: ${getLocalStorage('level') || 0}`);
-    setInnerHTML("button1", "Click me");
 }
 
 function makePara(parentID, text) {
