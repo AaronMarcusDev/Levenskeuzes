@@ -2,8 +2,8 @@
 Maak de juiste keuzes en leef een goed leven ofzo
 
 # Notes
-Ik heb besloten om GEEN JavaScript framework te gebruiken.
-Vanilla JS :) 🍦
+Ik heb besloten om GEEN JavaScript framework te gebruiken.\
+Vanilla JS🍦
 
 # Taken
 **Tije**:\
