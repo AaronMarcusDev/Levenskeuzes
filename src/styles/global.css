@@ -1,16 +1,16 @@
 /* Hey Owen, I'll leave this to you, ask me if you need any sort of help. */
 /*lettertype*/
 @font-face {
-    font-family: "kopscript";
-    src: url("fonts/Kopscript-Regular.ttf") format("truetype");
+    font-family: "pridi";
+    src: url("fonts/Pridi-Regular.ttf") format("truetype");
 }
 html {
-    font-family: "kopscript", "Kopscript-Regular";
+    font-family: "pridi", "Pridi-Regular";
     background-color: rgb(65, 62, 62);
     color: aliceblue;
 }
 button {
-    font-family: "kopscript", "Kopscript-Regular";
+    font-family: "pridi", "Pridi-Regular";
     background-color: rgb(65, 62, 62);
     color: aliceblue;
 }
