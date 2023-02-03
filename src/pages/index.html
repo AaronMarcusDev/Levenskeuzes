@@ -1,34 +1,30 @@
 <!DOCTYPE html>
 <html lang="nl">
+    <head>
+        <meta charset="utf-8" />
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+        <title>Levenskeuzes</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- Styling -->
+        <link rel="stylesheet" href="../styles/header.css" />
+        <!-- Scripts -->
+        <script type="text/javascript" src="../scripts/minilib.js"></script>
+        <script type="text/javascript" src="../scripts/main.js"></script>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
-    <title>Levenskeuzes</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Styling -->
-    <link rel="stylesheet" href="../styles/header.css">
-    <!-- Scripts -->
-    <script type="text/javascript" src="../scripts/minilib.js"></script>
-    <script type="text/javascript" src="../scripts/main.js"></script>
-</head>
-
-<body>
-    <navbar>
-        <p id="level">FAILED TO GET LEVEL</p>
-        <p>Levenskeuzes</p>
-        <p id="health">Health: 0</p>
-    </navbar><br>
-
-    <button onclick="textOne()">Increment counter</button>
-    <button onclick="clearCounter()">Clear counter</button>
-    <p>You can refresh the page and the counter won't change :O</p>
-    <div id="gameWindow">
-        GAMEWINDOW
-    </div>
-    <button onclick="damage(1)">Damage (1)</button>
-    <button onclick="heal(1)">Heal (1)</button>
-</body>
-
+    <body>
+        <navbar>
+            <p id="level">FAILED TO GET LEVEL</p>
+            <p>Levenskeuzes</p>
+            <p id="health">Health: 0</p>
+        </navbar>
+        <br />
+        <button onclick="textOne()">Increment counter</button>
+        <button onclick="clearCounter()">Clear counter</button>
+        <p>You can refresh the page and the counter won't change :O</p>
+        <div id="gameWindow">GAMEWINDOW</div>
+        <button onclick="damage(1)">Damage (1)</button>
+        <button onclick="heal(1)">Heal (1)</button>
+    </body>
 </html>

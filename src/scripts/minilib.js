@@ -11,7 +11,7 @@ function makeNewChild(Element, Parent, Child) {
     document.getElementById(Parent).appendChild(child);
 }
 
-let setInnerHTML = (id, text) => document.getElementById(id).innerHTML = text;
+let setInnerHTML = (id, text) => (document.getElementById(id).innerHTML = text);
 
 // Local Storage
 function setLocalStorage(key, value) {
@@ -31,5 +31,5 @@ function clearLocalStorage() {
 }
 
 function supportsLocalStorage() {
-    return typeof Storage !== 'undefined';
+    return typeof Storage !== "undefined";
 }
