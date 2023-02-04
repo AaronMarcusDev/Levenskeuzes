@@ -11,14 +11,14 @@ window.onload = () => {
     makeNewParent("div", "container");
     makePara("container", `Counter: ${counter}`);
     replacePara("level", `Level: ${getLocalStorage("level") || 0}`);
-    replacePara("health", "Health: 0");
-    setLocalStorage("health", 0);
+    replacePara("health", "Health: 1");
+    setLocalStorage("health", 1);
     setInnerHTML("gameWindow", ""); // clear gameWindow
-};
+}
 
 // Actions
 function damage(damage) {
-    if (parseInt(getLocalStorage("health")) === 0) {
+    if (parseInt(getLocalStorage("health")) === 1) {
         alert("You died :(");
     } else {
         setLocalStorage("health", parseInt(getLocalStorage("health")) - damage);

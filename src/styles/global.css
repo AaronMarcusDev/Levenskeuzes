@@ -14,3 +14,8 @@ button {
     background-color: rgb(65, 62, 62);
     color: aliceblue;
 }
+
+button:hover {
+    background-color: aliceblue;
+    color: rgb(65, 62, 62);
+}
