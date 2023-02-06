@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html lang="nl">
-    <head>
-        <meta charset="utf-8" />
-        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
-        <title>Levenskeuzes</title>
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <!-- Styling -->
-        <link rel="stylesheet" href="../styles/header.css" />
-        <link rel="stylesheet" href="../styles/global.css" />
-        <!-- Scripts -->
-        <script type="text/javascript" src="../scripts/minilib.js"></script>
-        <script type="text/javascript" src="../scripts/main.js"></script>
-    </head>
 
-    <body>
-        <navbar>
-            <p id="level">FAILED TO GET LEVEL</p>
-            <p>Levenskeuzes</p>
-            <p id="health">Health: 0</p>
-        </navbar>
-        <br />
-        <button onclick="textOne()">Increment counter</button>
+<head>
+    <meta charset="utf-8" />
+    <!-- Page Setup -->
+    <title>Levenskeuzes</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Styling -->
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/option.css" />
+    <!-- Scripts -->
+    <script type="text/javascript" src="../scripts/minilib.js"></script>
+    <script type="text/javascript" src="../scripts/main.js"></script>
+</head>
+
+<body>
+    <navbar>
+        <p id="level">FAILED TO GET LEVEL</p>
+        <p>Levenskeuzes</p>
+        <p id="health">Health: 0</p>
+    </navbar>
+    <br />
+    <!-- <button onclick="textOne()">Increment counter</button>
         <button onclick="clearCounter()">Clear counter</button>
-        <p>You can refresh the page and the counter won't change :O</p>
-        <div id="gameWindow">GAMEWINDOW</div>
-        <button onclick="damage(1)">Damage (1)</button>
-        <button onclick="heal(1)">Heal (1)</button>
-    </body>
+        <p>You can refresh the page and the counter won't change :O</p> -->
+
+
+    <div id="gameWindow">
+        <button class="option" id="leftOption">leftOption</button>
+        <button class="option" id="rightOption">rightOption</button>
+    </div>
+
+
+    <!-- <button onclick="damage(1)">Damage (1)</button>
+        <button onclick="heal(1)">Heal (1)</button> -->
+</body>
+
 </html>

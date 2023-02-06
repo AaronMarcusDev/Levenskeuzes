@@ -7,13 +7,12 @@ let level = localStorage.getItem("level") || 0;
 
 // onPageload
 window.onload = () => {
-    setLocalStorage("level", 69);
     makeNewParent("div", "container");
-    makePara("container", `Counter: ${counter}`);
+    // makePara("container", `Counter: ${counter}`);
     replacePara("level", `Level: ${getLocalStorage("level") || 0}`);
     replacePara("health", "Health: 1");
     setLocalStorage("health", 1);
-    setInnerHTML("gameWindow", ""); // clear gameWindow
+    Level1();
 }
 
 // Actions
@@ -58,4 +57,20 @@ function clearCounter() {
     counter = 0;
     replacePara("container", "Counter: 0");
     localStorage.setItem("counter", counter);
+}
+
+// Levels
+function Level1() {
+    leftOption = document.getElementById("leftOption");
+    rightOption = document.getElementById("rightOption");
+    setLocalStorage("level", 1);
+    leftOption.textContent = "Ga naar de sportschool";
+    rightOption.textContent = "Drink een energy blikje";
+
+    leftOption.addEventListener("click", function () {
+        heal(1);
+    });
+    rightOption.addEventListener("click", function () {
+        alert("You lost!");
+    });
 }
