@@ -17,11 +17,8 @@ window.onload = () => {
 
 // Actions
 function damage(damage) {
-    let health = parseInt(getLocalStorage("health"));
-    if (health - damage < 1) {
+    if (parseInt(getLocalStorage("health")) === 1) {
         alert("You died :(");
-        setLocalStorage("health", 1);
-        replacePara("health", `Health: 1`);
     } else {
         setLocalStorage("health", parseInt(getLocalStorage("health")) - damage);
         replacePara("health", `Health: ${getLocalStorage("health")}`);
@@ -62,38 +59,41 @@ function clearCounter() {
     localStorage.setItem("counter", counter);
 }
 
-function initButtons(left, right) {
-    leftOption = document.getElementById("leftOption");
-    rightOption = document.getElementById("rightOption");
-    leftOption.textContent = left;
-    rightOption.textContent = right;
-}
-
 // Levels
 function Level1() {
-    function roundTwo() {
-        initButtons("Ga naar de sportschool", "Neem een dag rust");
+    let clicked = false;
+    leftOption = document.getElementById("leftOption");
+    rightOption = document.getElementById("rightOption");
+    function one() {
+        setLocalStorage("level", 1);
+        leftOption.textContent = "Ga naar de sportschool";
+        rightOption.textContent = "Ga op de bank zitten";
+
+        // while (!clicked) {
+            
+        //     leftOption.addEventListener("click", function () {
+        //         heal(1);
+        //         clicked = true;
+        //     });
+        //     rightOption.addEventListener("click", function () {
+        //         damage(1);
+        //         clicked = true;
+        //     });
+        // }
+    }
+
+    function two() {
+        setLocalStorage("level", 1);
+        leftOption.textContent = "Ga naar de spurtschool";
+        rightOption.textContent = "Ga op de baaank zitten";
 
         leftOption.addEventListener("click", function () {
+            heal(1);
+        });
+        rightOption.addEventListener("click", function () {
             damage(1);
-            // roundThree();
-        });
-        rightOption.addEventListener("click", function () {
-            heal(1);
         });
     }
-
-    function roundOne() {
-        initButtons("Ga naar de sportschool", "Drink een energy blikje");
-
-        leftOption.addEventListener("click", function () {
-            heal(1);
-            roundTwo();
-        });
-        rightOption.addEventListener("click", function () {
-            damage(parseInt(getLocalStorage("health")));
-        });
-    }
-
-    roundOne();
+    one();
+    two();
 }

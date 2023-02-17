@@ -17,10 +17,10 @@ Vanilla JS🍦
 
 **Owen**, zou jij de global CSS kunnen maken? ([File bestaat al](https://github.com/AaronMarcusDev/blob/main/src/styles/global.css))
 
-- [ ]  grijze achtergrond
-- [ ]  Witte text
-- [ ]  Het font dat Tije uit heeft gezocht op [Google Fonts](http://fonts.google.com/)
-- [ ] button hover (.buttonName::hover {css here})
+- [x]  grijze achtergrond
+- [x]  Witte text
+- [x]  Het font dat Tije uit heeft gezocht op [Google Fonts](http://fonts.google.com/)
+- [x] button hover (.buttonName::hover {css here})
 - [ ]  alles hierboven in hun behorende tags, thanks :)
 
 Ik (**Aaron**), ga aan een JavaScript library werken, een soort mini-framwork,
