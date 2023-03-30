@@ -59,12 +59,8 @@ function achievement(name, preInfo) {
             clearInterval(timerInterval)
         }
     }).then((result) => {
-        /* Read more about handling dismissals below */
-        if (result.dismiss === Swal.DismissReason.timer) {
-            console.log('I was closed by the timer')
-        }
+        Level1();
     })
-    Level1();
 }
 
 function replacePara(parentID, text) {
@@ -97,7 +93,12 @@ function Level1() {
             initButtons("Ga naar de sportschool", "Neem een dag rust");
             // l2
         } else if (currentRound === 2) {
-            death("Je ging twee keer achter elkaar sporten, het is belangrijk om genoeg tijd te nemen om je spieren te laten herstellen.");
+            if (!getLocalStorage("a2")) {
+                setLocalStorage("a2", true);
+                achievement("Te fanatiek", "Je ging twee keer achter elkaar sporten, het is belangrijk om genoeg tijd te nemen om je spieren te laten herstellen.");
+            } else {
+                death("Je ging twee keer achter elkaar sporten, het is belangrijk om genoeg tijd te nemen om je spieren te laten herstellen.");
+            }
             // l3
         } else if (currentRound === 3) {
             initButtons("Kijk nog een aflevering van je favoriete serie", "Ga op tijd naar bed");
@@ -117,7 +118,7 @@ function Level1() {
             } else {
                 death("Je dronk een blikje energy, dit is vreselijk slecht voor je gezondheid.");
             }
-            
+
             // r2
         } else if (currentRound === 2) {
             initButtons("Eet een gezonde maaltijd", "Eet fast food");

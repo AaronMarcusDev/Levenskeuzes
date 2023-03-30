@@ -11,7 +11,7 @@ Vanilla JS🍦
 
 **Tije**:
 - [x] Zoek een font uit op [Google Fonts](http://fonts.google.com/), doe iets wat goed te lezen is in normaal en als CAPS.
-- [ ] Maak de end credits
+- [x] Maak de end credits
 
 **Wouter**:
 - [x] Zou jij eindes en achievements kunnen bedenken, achievements met naam een beschrijving graag.
@@ -22,7 +22,7 @@ Vanilla JS🍦
 - [x]  Witte text
 - [x]  Het font dat Tije uit heeft gezocht op [Google Fonts](http://fonts.google.com/)
 - [x] button hover (.buttonName::hover {css here})
-- [ ]  alles hierboven in hun behorende tags, thanks :)
+- [x]  alles hierboven in hun behorende tags, thanks :)
 
 Ik (**Aaron**), ga aan een JavaScript library werken, een soort mini-framwork,
 om de backend van de website te programmeren.
