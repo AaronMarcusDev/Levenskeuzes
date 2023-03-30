@@ -11,5 +11,9 @@ window.onload = () => {
             en bij sommige merken zelfs te hoog voor volwassenen.<br>
             Dit kan oplopen naar suikerziektes en zelfs hartstilstand.<br>
             `);
+    } else if (getLocalStorage("a2")) {
+        addItem("Te fanatiek", `
+            Je ging twee keer achter elkaar sporten, het is belangrijk om genoeg<br>tijd te nemen om je spieren te laten herstellen.
+        `);
     }
 }

@@ -95,7 +95,7 @@ function Level1() {
         } else if (currentRound === 2) {
             if (!getLocalStorage("a2")) {
                 setLocalStorage("a2", true);
-                achievement("Te fanatiek", "Je ging twee keer achter elkaar sporten, het is belangrijk om genoeg tijd te nemen om je spieren te laten herstellen.");
+                achievement("Te fanatiek", "Je ging twee keer achter elkaar sporten, het is belangrijk om genoeg tijd te nemen om je spieren te laten herstellen. ");
             } else {
                 death("Je ging twee keer achter elkaar sporten, het is belangrijk om genoeg tijd te nemen om je spieren te laten herstellen.");
             }
