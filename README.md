@@ -1,6 +1,6 @@
 # Levenskeuzes
 
-Maak de juiste keuzes en leef een goed leven ofzo
+Maak de juiste keuzes en leef een goed leven.
 
 # Notes
 
