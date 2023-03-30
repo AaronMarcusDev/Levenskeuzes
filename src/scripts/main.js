@@ -1,44 +1,70 @@
-// Check if localStorage is supported
-if (!supportsLocalStorage())
-    alert("ERROR: Please use a browser that supports localStorage");
-
-// Global variables
-let level = localStorage.getItem("level") || 0;
-
 // onPageload
 window.onload = () => {
+    // clearLocalStorage();
+    // Check if localStorage is supported
+    if (!supportsLocalStorage()) {
+        swal("ERROR: Please use a browser that supports localStorage");
+        swal("The game won't function properly without localStorage. Please try again in another browser.");
+    }
+
     makeNewParent("div", "container");
-    // makePara("container", `Counter: ${counter}`);
-    replacePara("level", `Level: ${getLocalStorage("level") || 0}`);
-    replacePara("health", "Health: 1");
-    setLocalStorage("health", 1);
+    replacePara("level", `Level: 1`);
+    if (!getLocalStorage("highScore")) localStorage.setItem("highScore", 1);
+    replacePara("highScore", `Highscore: ${localStorage.getItem("highScore")}`);
+
     Level1();
 };
 
-// Actions
-function damage(damage) {
-    let health = parseInt(getLocalStorage("health"));
-    if (health - damage < 1) {
-        alert("You died :(");
-        setLocalStorage("health", 1);
-        replacePara("health", `Health: 1`);
-    } else {
-        setLocalStorage("health", parseInt(getLocalStorage("health")) - damage);
-        replacePara("health", `Health: ${getLocalStorage("health")}`);
-    }
+function death(message) {
+    let timerInterval
+    swal({
+        title: "Level gefaald",
+        text: message,
+        icon: "error",
+        timer: 6000,
+        timerProgressBar: true,
+        button: "Oké (sluit automatisch)",
+        didOpen: () => {
+            timerInterval = setInterval(() => {
+                b.textContent = Swal.getTimerLeft()
+            }, 100)
+        },
+        willClose: () => {
+            clearInterval(timerInterval)
+        }
+    }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+            console.log('I was closed by the timer')
+        }
+    })
+    Level1();
 }
 
-function heal(heal) {
-    setLocalStorage("health", parseInt(getLocalStorage("health")) + heal);
-    replacePara("health", `Health: ${getLocalStorage("health")}`);
-}
-
-// Example functions (Counter)
-let counter = localStorage.getItem("counter") || 0;
-
-function makePara(parentID, text) {
-    makeNewChild("p", parentID, "para");
-    document.getElementById("para").innerHTML = text;
+function achievement(name, preInfo) {
+    let timerInterval
+    swal({
+        title: "Nieuwe prestatie behaald!",
+        text: `${preInfo}De prestatie '${name}' is nu te vinden bij de prestaties! `,
+        icon: "info",
+        timer: 6000,
+        timerProgressBar: true,
+        button: "Oké (sluit automatisch)",
+        didOpen: () => {
+            timerInterval = setInterval(() => {
+                b.textContent = Swal.getTimerLeft()
+            }, 100)
+        },
+        willClose: () => {
+            clearInterval(timerInterval)
+        }
+    }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+            console.log('I was closed by the timer')
+        }
+    })
+    Level1();
 }
 
 function replacePara(parentID, text) {
@@ -47,19 +73,6 @@ function replacePara(parentID, text) {
     document
         .getElementById(parentID)
         .replaceChild(p, document.getElementById(parentID).firstChild);
-}
-
-function textOne() {
-    counter++;
-    if (counter === 0) makePara("container", `This is text ${counter}`);
-    else replacePara("container", `Counter: ${counter}`);
-    localStorage.setItem("counter", counter);
-}
-
-function clearCounter() {
-    counter = 0;
-    replacePara("container", "Counter: 0");
-    localStorage.setItem("counter", counter);
 }
 
 function initButtons(left, right) {
@@ -71,29 +84,98 @@ function initButtons(left, right) {
 
 // Levels
 function Level1() {
-    function roundTwo() {
-        initButtons("Ga naar de sportschool", "Neem een dag rust");
+    let currentRound = 1;
 
-        leftOption.addEventListener("click", function () {
-            damage(1);
-            // roundThree();
-        });
-        rightOption.addEventListener("click", function () {
-            heal(1);
-        });
+    leftOption = document.getElementById("leftOption");
+    rightOption = document.getElementById("rightOption");
+
+    initButtons("Ga naar de sportschool", "Drink een energy drankje");
+
+    leftOption.onclick = function () {
+        // l1
+        if (currentRound === 1) {
+            initButtons("Ga naar de sportschool", "Neem een dag rust");
+            // l2
+        } else if (currentRound === 2) {
+            death("Je ging twee keer achter elkaar sporten, het is belangrijk om genoeg tijd te nemen om je spieren te laten herstellen.");
+            // l3
+        } else if (currentRound === 3) {
+            initButtons("Kijk nog een aflevering van je favoriete serie", "Ga op tijd naar bed");
+            // l4
+        } else if (currentRound === 4) {
+            death("Slaap is heel belangrijk voor je gezondheid, dus de beter optie was om gewoon op tijd naar bed te gaan.")
+        }
+        currentRound++;
     }
 
-    function roundOne() {
-        initButtons("Ga naar de sportschool", "Drink een energy blikje");
+    rightOption.onclick = function () {
+        // r1
+        if (currentRound === 1) {
+            if (!getLocalStorage("a1")) {
+                setLocalStorage("a1", true);
+                achievement("Who's the monster™ now", "Je dronk een blikje energy, dit is vreselijk slecht voor je gezondheid. ");
+            } else {
+                death("Je dronk een blikje energy, dit is vreselijk slecht voor je gezondheid.");
+            }
+            
+            // r2
+        } else if (currentRound === 2) {
+            initButtons("Eet een gezonde maaltijd", "Eet fast food");
+            // r3
+        } else if (currentRound === 3) {
+            death("Fast food is slecht voor je gezondheid, omdat het veel frituurvet en zout bevat.");
+            // r4
+        } else if (currentRound === 4) {
+            Level2();
+        }
+        currentRound++;
+    }
+}
 
-        leftOption.addEventListener("click", function () {
-            heal(1);
-            roundTwo();
-        });
-        rightOption.addEventListener("click", function () {
-            damage(parseInt(getLocalStorage("health")));
-        });
+function Level2() {
+    if (parseInt(getLocalStorage("highScore")) < 2) {
+        setLocalStorage("highScore", 2);
+        replacePara("highScore", `Highscore: ${localStorage.getItem("highScore")}`);
     }
 
-    roundOne();
+    let currentRound = 1;
+
+    leftOption = document.getElementById("leftOption");
+    rightOption = document.getElementById("rightOption");
+
+    initButtons("Eet een appel", "Eet een zak chips");
+
+    leftOption.onclick = function () {
+        // l1
+        if (currentRound === 1) {
+            initButtons("Neem een salade mee naar het werk", "Haal fastfood voor lunch");
+            // l2
+        } else if (currentRound === 2) {
+            initButtons("Kook een gezonde maaltijd", "Bestel afhaalmaaltijden");
+            // l3
+        } else if (currentRound === 3) {
+            initButtons("Drink water", "Drink frisdrank");
+            // l4
+        } else if (currentRound === 4) {
+            Level3();
+        }
+        currentRound++;
+    }
+
+    rightOption.onclick = function () {
+        // r1
+        if (currentRound === 1) {
+            death("Chips zijn een ongezonde snack die veel vet, zout en suiker bevatten.");
+            // r2
+        } else if (currentRound === 2) {
+            death("Fastfood is slecht voor je gezondheid en kan leiden tot gewichtstoename en andere gezondheidsproblemen op de lange termijn.");
+            // r3
+        } else if (currentRound === 3) {
+            death("Afhaalmaaltijden bevatten vaak veel vet, zout en suiker, wat slecht is voor je gezondheid op de lange termijn.");
+            // r4
+        } else if (currentRound === 4) {
+            death("Frisdrank is slecht voor je gezondheid, omdat het veel suiker bevat.");
+        }
+        currentRound++;
+    }
 }

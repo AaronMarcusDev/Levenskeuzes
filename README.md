@@ -11,9 +11,10 @@ Vanilla JS🍦
 
 **Tije**:
 - [x] Zoek een font uit op [Google Fonts](http://fonts.google.com/), doe iets wat goed te lezen is in normaal en als CAPS.
+- [ ] Maak de end credits
 
 **Wouter**:
-- [ ] Zou jij eindes en achievements kunnen bedenken, achievements met naam een beschrijving graag.
+- [x] Zou jij eindes en achievements kunnen bedenken, achievements met naam een beschrijving graag.
 
 **Owen**, zou jij de global CSS kunnen maken? ([File bestaat al](https://github.com/AaronMarcusDev/blob/main/src/styles/global.css))
 
