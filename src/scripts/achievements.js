@@ -28,4 +28,7 @@ window.onload = () => {
     if (getLocalStorage("a5")) {
         addItem("Cheat Day 2", `Als je dan toch een burger neemt, neem dan degene met minder kcal.`);
     }
+    if (!getLocalStorage("a1") && !getLocalStorage("a2") && !getLocalStorage("a3") && !getLocalStorage("a4") && !getLocalStorage("a5")) {
+        mainWindow.innerHTML += "<h2>Je hebt nog geen prestaties behaald.</h2>"
+    }
 }
