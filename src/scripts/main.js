@@ -216,7 +216,7 @@ function Level3() {
         } else if (currentRound === 4) {
             if (!getLocalStorage("a4")) {
                 setLocalStorage("a4", true);
-                achievement("Cheat Day 1", "Als je dan toch een burger moet kiezen, dan is de Whopper Burger van de Burger King de 'gezondere' optie.");
+                achievement("Cheat Day 1", "Als je dan toch een burger moet kiezen, dan is de Whopper Burger van de Burger King de 'gezondere' optie. ");
             } else {
                 death("Als je dan toch een burger moet kiezen, dan is de Whopper Burger van de Burger King de 'gezondere' optie.");
             }
@@ -238,7 +238,7 @@ function Level3() {
         } else if (currentRound === 4) {
             if (!getLocalStorage("a5")) {
                 setLocalStorage("a5", true);
-                achievement("Cheat Day 2", "Als je dan toch een burger neemt, neem dan degene met minder kcal.");
+                achievement("Cheat Day 2", "Als je dan toch een burger neemt, neem dan degene met minder kcal. ");
             }
             Level4();
         }
