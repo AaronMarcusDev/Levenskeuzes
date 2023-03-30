@@ -17,4 +17,15 @@ window.onload = () => {
             Je ging twee keer achter elkaar sporten, het is belangrijk om genoeg<br>tijd te nemen om je spieren te laten herstellen.
         `);
     }
+    if (getLocalStorage("a3")) {
+        addItem("We waarderen de motivatie", `
+        We waarderen dat je graag wilt studeren, maar lange periodes van leren zonder pauze kan leiden tot<br>concentratieproblemen, vermoeidheid en hoofdpijn.`);
+    }
+    if (getLocalStorage("a4")) {
+        addItem("Cheat Day 1", `Als je dan toch een burger moet kiezen, dan is de Whopper Burger van de Burger King<br>
+        de 'gezondere' optie. Die bevat namelijk minder kcal dan de Big Mac.`);
+    }
+    if (getLocalStorage("a5")) {
+        addItem("Cheat Day 2", `Als je dan toch een burger neemt, neem dan degene met minder kcal.`);
+    }
 }
